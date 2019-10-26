@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+	<beans>		
+<bean id="collect" class="com.saikiran.assign.Question">  
+<property name="question" value="What is Java?"></property>  
+<property name="answers" value="Java is a programming language"></property>  
+</bean>  
+
+<bean id="collection" class="com.saikiran.assign.Question">
+<property name="answers1" >  
+<list><value>1</value> 
+<ref bean="collect"/>  
+</list>  
+</property> 
+
+<property name="answers2" >  
+<set><value>1</value> 
+<ref bean="collect"/>  
+</set>  
+</property>
+<property name="answers3" >  
+<map><entry key="1" value="1"></entry> 
+<entry key="2" value-ref="collect"></entry>
+</map>  
+</property>
+</bean>  
+  
+</beans>  
